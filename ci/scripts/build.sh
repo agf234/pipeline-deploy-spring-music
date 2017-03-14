@@ -2,7 +2,7 @@
 set -e -x
 
 pushd spring-music
-#TERM=vt100 ./gradlew assemble
+TERM=vt100 ./gradlew assemble
 if [ $? != 0 ]
 then
    echo "Error en build de spring-music";
@@ -10,11 +10,10 @@ then
 fi
 popd
 
-#tar cfz spring-music-bin.tar.gz spring-music
+tar cfz spring-music-bin.tar.gz spring-music
 
-echo "hola" > archivo
-tar cfz spring-music-bin.tar.gz archivo
-
+#echo "hola" > archivo
+#tar cfz spring-music-bin.tar.gz archivo
 
 ftp -n 192.168.0.127 <<EOS
 user ftp 

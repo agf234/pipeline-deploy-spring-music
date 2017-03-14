@@ -25,9 +25,9 @@ jobs:
   - aggregate:
     - get: pipeline-repo
       trigger: true
-      passed: [build-spring-music]
+      #passed: [build-spring-music]
     - get: spring-music
-      passed: [build-spring-music]
+      #passed: [build-spring-music]
   - task: deploy
     file: pipeline-repo/ci/tasks/deploy.yml
 
