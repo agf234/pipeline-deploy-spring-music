@@ -2,8 +2,7 @@
 set -e -x
 
 pushd spring-music
-#TERM=vt100 ./gradlew assemble
-echo "gradle"
+TERM=vt100 ./gradlew assemble
 if [ $? != 0 ]
 then
    echo "Error en build de spring-music";
@@ -11,8 +10,7 @@ then
 fi
 popd
 
-#tar cfj spring-music-bin.tar.bz2 spring-music
-echo "hola" spring-music-bin.tar.bz2
+tar cfj spring-music-bin.tar.bz2 spring-music
 
 set +x
 echo "machine 192.168.0.127 login anonymouse password 123" >> ~/.netrc
