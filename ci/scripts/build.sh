@@ -17,8 +17,7 @@ tar cfj spring-music-bin.tar.bz2 archivo
 
 
 ftp -n 192.168.0.127 <<EOS
-user anonymous
-pass anonymous
+user ftp ftp 
 cd pub
 bin
 put spring-music-bin.tar.bz2
