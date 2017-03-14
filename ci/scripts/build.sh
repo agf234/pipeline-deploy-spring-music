@@ -20,6 +20,8 @@ set -x
 
 
 ftp -n 192.168.0.127 <<EOF
+user anonymous
+pass anonymous
 cd pub
 bin
 put spring-music-bin.tar.bz2
