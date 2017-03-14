@@ -2,7 +2,7 @@
 set -e -x
 
 pushd spring-music
-gradlew assemble
+./gradlew assemble
 if [ $? != 0 ]
 then
    echo "Error en build de spring-music";
