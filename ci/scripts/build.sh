@@ -2,7 +2,8 @@
 set -e -x
 
 pushd spring-music
-TERM=vt100 ./gradlew assemble
+#TERM=vt100 ./gradlew assemble
+echo "gradle"
 if [ $? != 0 ]
 then
    echo "Error en build de spring-music";
