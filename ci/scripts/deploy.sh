@@ -2,9 +2,7 @@
 set -e
 
 ### Load env
-mkdir spring-music
 
-cd spring-music
 ftp -n 192.168.0.127 <<EOF
 user anonymous
 pass 
@@ -12,6 +10,8 @@ bin
 cd pub
 mget spring-music-bin.tar.bz2
 EOF
+
+tar xvfj spring-music-bin.tar.bz2
 
 cd spring-music
 
