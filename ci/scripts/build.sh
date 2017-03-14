@@ -10,11 +10,11 @@ then
 fi
 popd
 
-du -sm spring-music
+#tar cfj spring-music-bin.tar.bz2 spring-music
+echo "hola" spring-music-bin.tar.bz2
 
-tar cvfj spring-music-bin.tar.bz2 spring-music
-
-ftp -u anonymous 192.168.0.127 << EOF
+ftp -u anonymous 192.168.0.127 <<EOF
 cd pub
+bin
 put spring-music-bin.tar.bz2
 EOF 
