@@ -5,12 +5,12 @@ set -e
 mkdir spring-music
 
 cd spring-music
-ftp -n ftp 192.168.0.127 <<EOF
+ftp -n 192.168.0.127 <<EOF
 user anonymous
-pass anonymous
+pass 
 bin
 cd pub
-get spring-music*tar.bz2
+mget spring-music-bin.tar.bz2
 EOF
 
 cd spring-music
