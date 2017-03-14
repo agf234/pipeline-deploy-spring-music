@@ -14,7 +14,12 @@ popd
 #tar cfj spring-music-bin.tar.bz2 spring-music
 echo "hola" spring-music-bin.tar.bz2
 
-ftp -u anonymous 192.168.0.127 <<EOF
+set +x
+echo "machine 192.168.0.127 login anonymouse password 123" >> ~/.netrc
+set -x
+
+
+ftp -n 192.168.0.127 <<EOF
 cd pub
 bin
 put spring-music-bin.tar.bz2
