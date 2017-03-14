@@ -1,0 +1,38 @@
+resources:
+- name: pipeline-repo
+  type: git
+  check: 1m
+  source:
+    uri: https://github.com/agf234/pipeline-deploy-sprint-music.git
+    branch: master
+
+- name: spring-music
+  type: git
+  source:
+    uri: https://github.com/cloudfoundry-samples/spring-music
+
+jobs:
+- name: build-spring-music
+  plan:
+  - get: pipeline-repo
+  - get: chaos-loris-repo
+  - task: build
+    file: pipeline-repo/ci/tasks/build.yml
+
+- name: deploy-spring-music
+  plan:
+  - aggregate:
+    - get: pipeline-repo
+    - get: chaos-loris-repo
+    - passed: [build-sprintg-music]
+  - task: deploy
+    file: pipeline-repo/ci/tasks/deploy.yml
+
+- name: acceptance-test
+  plan:
+  - aggregate:
+    - get: pipeline-repo
+    - get: simple-victim-app
+    - passed: [deploy-sprintg-music]
+  - task: run-app-test
+    file: pipeline-repo/ci/tasks/curl-app.yml
