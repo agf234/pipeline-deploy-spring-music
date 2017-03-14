@@ -4,7 +4,7 @@ set -e -x
 ### Load env
 
 ftp -n 192.168.0.127 <<EOF
-user anonymous
+user ftp
 pass 
 bin
 cd pub
