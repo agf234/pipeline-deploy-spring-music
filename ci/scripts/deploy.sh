@@ -8,6 +8,7 @@ user ftp
 pass 
 bin
 cd pub
+ls -l 
 get spring-music-bin.tar.gz
 EOF
 
