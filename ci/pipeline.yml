@@ -39,3 +39,5 @@ jobs:
       passed: [deploy-spring-music]
   - task: run-app-test
     file: pipeline-repo/ci/tasks/curl.yml
+
+
