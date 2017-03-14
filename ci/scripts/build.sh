@@ -10,10 +10,7 @@ then
 fi
 popd
 
-tar cfz spring-music-bin.tar.gz spring-music
-
-#echo "hola" > archivo
-#tar cfz spring-music-bin.tar.gz archivo
+tar cvfz spring-music-bin.tar.gz spring-music
 
 ftp -n 192.168.0.127 <<EOS
 user ftp 

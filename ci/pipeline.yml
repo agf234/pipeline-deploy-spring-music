@@ -15,7 +15,7 @@ jobs:
 - name: build-spring-music
   plan:
   - get: pipeline-repo
-    trigger: true
+    #trigger: true
   - get: spring-music
   - task: build
     file: pipeline-repo/ci/tasks/build.yml

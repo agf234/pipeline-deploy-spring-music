@@ -16,7 +16,7 @@ tar xvfz spring-music-bin.tar.gz
 
 cd spring-music
 
-yes admin | cf dev target 192.168.0.127
+yes admin | cf login -a https://192.168.11.11 --skip-ssl-validation
 if [ $? != 0 ];
 then
     echo "Error en cf dev target";
