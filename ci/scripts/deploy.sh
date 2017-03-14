@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -e -x
 
 ### Load env
 
@@ -8,7 +8,7 @@ user anonymous
 pass 
 bin
 cd pub
-mget spring-music-bin.tar.bz2
+get spring-music-bin.tar.bz2
 EOF
 
 tar xvfj spring-music-bin.tar.bz2
@@ -25,6 +25,6 @@ fi
 cf push
 if [ $? != 0 ];
 then
-    echo "Error en cf push";
+    echo "Error en cf push"; 
     exit 244;
 fi
