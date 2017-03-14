@@ -8,10 +8,10 @@ user ftp
 pass 
 bin
 cd pub
-get spring-music-bin.tar.bz2
+get spring-music-bin.tar.gz
 EOF
 
-tar xvfj spring-music-bin.tar.bz2
+tar xvfz spring-music-bin.tar.gz
 
 cd spring-music
 
