@@ -18,11 +18,11 @@ tar xvfz spring-music-bin.tar.gz
 
 cd spring-music
 
-cf dev target 
+#cf dev target 
 
-cf dev trust
+#cf dev trust
 
-yes admin | cf login -a https://api.local.pcfdev.io -o pcfdev-org
+yes admin | cf login -a https://api.local.pcfdev.io -o pcfdev-org --skip-ssl-validation
 if [ $? != 0 ];
 then
     echo "Error en cf dev target";
