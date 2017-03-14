@@ -3,5 +3,9 @@ set -e -x
 
 pushd spring-music
 gradlew assemble
-exit_on_error "gradlew error"
+if [ $? != 0 ]
+then
+   echo "Error en build de spring-music";
+   exit 240;
+fi
 popd

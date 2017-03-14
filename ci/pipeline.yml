@@ -3,7 +3,7 @@ resources:
   type: git
   check: 1m
   source:
-    uri: https://github.com/agf234/pipeline-deploy-sprint-music.git
+    uri: https://github.com/agf234/pipeline-deploy-spring-music.git
     branch: master
 
 - name: spring-music
@@ -15,7 +15,7 @@ jobs:
 - name: build-spring-music
   plan:
   - get: pipeline-repo
-  - get: chaos-loris-repo
+  - get: spring-music
   - task: build
     file: pipeline-repo/ci/tasks/build.yml
 
@@ -23,8 +23,9 @@ jobs:
   plan:
   - aggregate:
     - get: pipeline-repo
-    - get: chaos-loris-repo
-    - passed: [build-sprintg-music]
+      passed: [build-spring-music]
+    - get: spring-music
+      passed: [build-spring-music]
   - task: deploy
     file: pipeline-repo/ci/tasks/deploy.yml
 
@@ -32,7 +33,6 @@ jobs:
   plan:
   - aggregate:
     - get: pipeline-repo
-    - get: simple-victim-app
-    - passed: [deploy-sprintg-music]
+      passed: [deploy-spring-music]
   - task: run-app-test
-    file: pipeline-repo/ci/tasks/curl-app.yml
+    file: pipeline-repo/ci/tasks/curl.yml

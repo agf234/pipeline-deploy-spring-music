@@ -14,5 +14,3 @@ inputs:
 - name: pipeline-repo
 - name: spring-music
 
-ouputs:
-- name: binary
