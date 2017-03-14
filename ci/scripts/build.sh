@@ -14,7 +14,7 @@ du -sm spring-music
 
 tar cvfj spring-music-bin.tar.bz2 spring-music
 
-ftp 192.168.0.127 << EOF
+ftp -u anonymous 192.168.0.127 << EOF
 cd pub
 put spring-music-bin.tar.bz2
 EOF 
