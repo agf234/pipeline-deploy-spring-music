@@ -5,11 +5,26 @@ set -e
 mkdir spring-music
 
 cd spring-music
-ftp -h
-ftp -u ftp 192.168.0.127 << EOF
+ftp -n ftp 192.168.0.127 <<EOF
+user anonymous
+pass anonymous
+bin
 cd pub
-mget spring-music*tar.bz2
+get spring-music*tar.bz2
 EOF
+
 cd spring-music
+
 yes admin | cf dev target 192.168.0.127
+if [ $? != 0 ];
+then
+    echo "Error en cf dev target";
+    exit 245;
+fi
+
 cf push
+if [ $? != 0 ];
+then
+    echo "Error en cf push";
+    exit 244;
+fi
