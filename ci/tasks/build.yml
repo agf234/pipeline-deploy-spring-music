@@ -8,7 +8,7 @@ image_resource:
     tag: latest
 
 run:
-  path: pipeline-repo/ci/scripts/deploy.sh
+  path: pipeline-repo/ci/scripts/build.sh
 
 inputs:
 - name: pipeline-repo
