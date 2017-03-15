@@ -35,6 +35,7 @@ jobs:
   plan:
   - aggregate:
     - get: pipeline-repo
+      trigger: true
       passed: [deploy-spring-music]
   - task: run-app-test
     file: pipeline-repo/ci/tasks/curl.yml
