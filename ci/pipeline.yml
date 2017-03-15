@@ -31,11 +31,10 @@ jobs:
   - task: deploy
     file: pipeline-repo/ci/tasks/deploy.yml
 
-- name: acceptance-test
+- name: smoke-test
   plan:
   - aggregate:
     - get: pipeline-repo
-      trigger: true
       passed: [deploy-spring-music]
   - task: run-app-test
     file: pipeline-repo/ci/tasks/curl.yml
