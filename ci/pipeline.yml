@@ -3,14 +3,14 @@ resources:
   type: git
   check: 1m
   source:
-    uri: https://github.com/agf234/pipeline-deploy-spring-music.git
+    uri: https://github.com/andyfiorini/pipeline-deploy-spring-music.git
     branch: master
 
 - name: spring-music
   type: git
   source:
     uri: https://github.com/cloudfoundry-samples/spring-music
-
+ 
 jobs:
 - name: build-spring-music
   plan:
