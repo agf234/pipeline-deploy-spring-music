@@ -3,18 +3,18 @@ set -e -x
 
 ### Load env
 
-ftp -n 192.168.0.127 <<EOF
-user ftp
-pass 
-bin
-cd pub
-ls -l 
-get spring-music-bin.tar.gz
-EOF
+#ftp -n 192.168.0.127 <<EOF
+#user ftp
+#pass 
+#bin
+#cd pub
+#ls -l 
+#get spring-music-bin.tar.gz
+#EOF
 
-echo "192.168.11.11 api.local.pcfdev.io" >> /etc/hosts
+#echo "192.168.11.11 api.local.pcfdev.io" >> /etc/hosts
 
-tar xvfz spring-music-bin.tar.gz
+#tar xvfz spring-music-bin.tar.gz
 
 cd spring-music
 
@@ -22,7 +22,7 @@ cd spring-music
 
 #cf dev trust
 
-yes admin | cf login -a https://api.local.pcfdev.io -o pcfdev-org --skip-ssl-validation
+yes admin | cf login -a https://api.apps.64.78.155.215.nip.io -o pcfdev-org --skip-ssl-validation
 if [ $? != 0 ];
 then
     echo "Error en cf dev target";
