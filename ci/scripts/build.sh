@@ -10,12 +10,12 @@ then
 fi
 popd
 
-tar cvfz spring-music-bin.tar.gz spring-music
+#tar cvfz spring-music-bin.tar.gz spring-music
 
-ftp -n 192.168.0.127 <<EOS
-user ftp 
-cd pub
-pass
-bin
-put spring-music-bin.tar.gz
-EOS
+#ftp -n 192.168.0.127 <<EOS
+#user ftp 
+#cd pub
+#pass
+#bin
+#put spring-music-bin.tar.gz
+#EOS
